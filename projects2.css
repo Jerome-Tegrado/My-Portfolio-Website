@@ -1,0 +1,264 @@
+body, h1, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Basic styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+}
+
+.branding h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.branding .tagline {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #888;
+    text-align: left; /* Align text to the left */
+    left: 0; /* Remove 'px' unit to avoid specificity issues */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    color: #888;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #000;
+    text-decoration: underline; /* Add underline effect */
+}
+
+
+
+.main-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-section {
+    flex: 1;
+    max-width: 70%;
+    margin: 0 auto; /* Center the project section horizontally */
+}
+
+.category {
+    text-align: center; /* Center text and content within each category */
+    margin-bottom: 100px; /* Add space between categories */
+    border: 3px solid #333; /* Initial solid border */
+    padding: 20px; /* Padding inside each category */
+
+}
+
+
+.category h2 {
+    margin-top: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    background-color: #333; /* Background color for the box */
+    color: #fff; /* White font color */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Make the h2 display inline-block */
+    text-align: center; /* Center-align text within the box */
+    max-width: 300px; /* Set maximum width for the h2 */
+    overflow: hidden; /* Hide overflow to simulate typing effect */
+    white-space: nowrap; /* Prevent wrapping */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for scaling, background color, and text color */
+}
+
+.category h2.hover-effect {
+    transform: scale(1.1); /* Scale up by 10% */
+    background-color: #ffcc00; /* Change background color */
+    color: #333; /* Change text color */
+}
+
+/* Optional: Add a hover effect when not in the automatic hover mode */
+.category h2:not(.hover-effect):hover {
+    transform: scale(1.1); /* Scale up by 10% on hover */
+    background-color: #ffcc00; /* Change background color on hover */
+    color: #333; /* Change text color on hover */
+}
+
+
+
+.category h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@keyframes changeBorderColor {
+    0% { border-color: #333; } /* Dark gray */
+    20% { border-color: #6b5b95; } /* Amethyst Smoke */
+    40% { border-color: #feb236; } /* Rajah */
+    60% { border-color: #d64161; } /* Hollywood Cerise */
+    80% { border-color: #255f85; } /* Jelly Bean */
+    100% { border-color: #333; } /* Back to initial color */
+}
+
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin bottom between project items */
+}
+
+
+.project-item img {
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+.project-item img:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+
+.dropdown-btn {
+    font-weight: bold;
+    font-size: medium;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+    display: inline-block;
+    padding: 12px 20px; /* Increase padding for larger button */
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s; /* Add font-size transition */
+    text-transform: uppercase; /* Capitalize all letters */
+    letter-spacing: 1px; /* Adjust letter spacing */
+    border-radius: 5px; /* Make the border slightly rounded */
+}
+
+.dropdown-btn:hover {
+    font-size: large; /* Increase font size on hover */
+    background-color: #333; /* Darken background on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+
+.dropdown-content {
+    top: 2px;
+    display: none;
+    background-color: #f5f5f5;
+    padding: 30px;
+    position: relative;
+    border-radius: 5px;
+    border: 3px solid rgb(0, 0, 0); /* Example border style */
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+.dropdown-item {
+    margin-bottom: 10px;
+}
+
+.dropdown-item img {
+    width: 500px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.dropdown-item p {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: -5px; /* Adjust top position as needed */
+    right: -5px; /* Adjust right position as needed */
+    cursor: pointer;
+    width: 43px; /* Initial width of the image */
+    height: 43px; /* Initial height of the image */
+    z-index: 100; /* Ensure it's above other content */
+    transition: filter 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.close-btn img {
+    width: 100%; /* Ensure the image takes up the entire space of .close-btn */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.close-btn:hover {
+    filter: brightness(70%); /* Darken the image to 70% brightness on hover */
+}
+
+
+
+
+
+
+
+@keyframes changeColor {
+    0% { background-color: #000080; color: #fff; }
+    20% { background-color: #4B0082; color: #fff; }
+    40% { background-color: #191970; color: #fff; }
+    60% { background-color: #000; color: #fff; }
+    80% { background-color: #2F4F4F; color: #fff; }
+    100% { background-color: #483D8B; color: #fff; }
+}
+
+.dropdown-btn {
+    animation: changeColor 10s infinite;
+}
+
+#moving-text {
+    position: left;
+    top: 50px; /* Adjust the top spacing as needed */
+    right: 50px; /* Adjust the right positioning as needed */
+    color: #fff;
+    padding: 50px 50px;
+    font-size: 6rem;
+    font-family: 'Arial', sans-serif; /* Specify your preferred font stack */
+    font-weight: bold; 
+    animation: moveText 15s ease-in-out infinite; /* Adjust animation properties as needed */
+}
+
+
+/* Slide transition effect */
+body.fade-out {
+    opacity: 0;
+    transform: translateX(-50px); /* Slide to the left */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Ensures the page starts fully opaque and at normal position */
+body {
+    opacity: 1;
+    transform: translateX(0); /* Start at normal position */
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}

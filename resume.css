@@ -1,0 +1,468 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font Face Declaration */
+@font-face {
+    font-family: JetBrainsMono-Bold;
+    src: url(./customfonts/JetBrainsMono-Bold.ttf);
+}
+
+@font-face {
+    font-family: JetBrainsMono-LightItalic;
+    src: url(./customfonts/JetBrainsMono-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: JetBrainsMono-Medium;
+    src: url(./customfonts/JetBrainsMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: JetBrainsMono-ThinItalic;
+    src: url(./customfonts/JetBrainsMono-ThinItalic.ttf);
+}
+
+@font-face {
+    font-family: JetBrainsMonoNL-Regular;
+    src: url(./customfonts/JetBrainsMonoNL-Regular.ttf);
+}
+
+@font-face {
+    font-family: Quotes;
+    src: url(./customfonts/Quotesy.ttf);
+}
+
+/* Font Face Declaration */
+@font-face {
+    font-family: Hacienda;
+    src: url(./customfonts/The\ Bride\ in\ Hacienda.ttf);
+}
+
+/* Font Face Declaration */
+@font-face {
+    font-family: Hacienda;
+    src: url(./customfonts/The\ Bride\ in\ Hacienda.ttf);
+}
+
+@font-face {
+    font-family: Carmitta;
+    src: url(./customfonts/Carmitta.ttf);
+}
+
+@font-face {
+    font-family: Shortcake;
+    src: url(./customfonts/Shortcake.ttf);
+}
+
+/* Body Styles */
+body {
+    font-family: JetBrainsMono-Bold, Arial, sans-serif;
+    background-color:  #000f3a;
+    overflow: hidden; /* Hide scroll bars on body */
+}
+
+/* Container for content that should scroll */
+.content-container {
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: calc(100vh - 60px); /* Adjust based on your header height */
+    padding: 10px; /* Optional: Add padding to keep content from edges */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ /* This hides any overflow content, including scroll bars */
+}
+
+
+
+
+.branding h1 {
+    margin-top: 10px;
+    margin-left: 110px;
+    font-family: Carmitta;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #cfecff; /* Initial color */
+    word-spacing: -3px;
+    letter-spacing: 5px;
+}
+
+
+.branding .tagline {
+    margin-top: 5px;
+    margin-left: 105px;
+    font-family: shortcake;
+    font-weight: 300;
+    font-size: 16px;
+    color: #6ebbfa; 
+    text-align: left; /* Align text to the left */
+    margin-bottom: 10px;
+}
+
+
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+header nav .about-link {
+    margin-right: 30px; /* Adjust margin-right as needed */
+}
+
+
+header nav a {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+
+nav .about-link {
+    margin-right: 30px; /* Adjust margin-right as needed */
+}
+
+nav a {
+    text-decoration: none;
+}
+nav a:hover,
+nav a.active {
+    color: #23deff;
+    text-decoration: underline; /* Add underline effect */
+}
+
+.profile-pic {
+    position: absolute; /* Position the image absolutely */
+    top: 7%; /* Vertically center the image */
+    left: 4%; /* Horizontally center the image */
+    width: 85px; /* Adjust the size as needed */
+    height: 85px; /* Adjust the size as needed */
+    transform: translate(-50%, -50%); /* Center the image precisely */
+    z-index: 1; /* Send the image behind the text */
+    opacity: 1; /* Adjust the opacity if needed */
+    border-radius: 50%; /* Make the image circular */
+    background: whitesmoke;
+    border: 2px;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 30%;
+    padding: 20px;
+    background-color:  #000f3a;
+    margin-top: 100px;
+    margin-left: 20px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    
+}
+
+
+.content h3 {
+    font-family: JetBrainsMono-Bold, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Preferred font family */
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block; /* Ensures the background and border fit around the text */
+    border: 2px solid #eee; /* Light initial border color */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #000f3a; /* White background color */
+    color: #666; /* Default text color */
+    animation: color-change 5s infinite, scalePositionAnimation 5s infinite alternate; /* Color, scale, and position animations */
+    position: relative; /* Ensure relative positioning for absolute children */
+    transform-origin: left; /* Scale from the left side */
+}
+
+@keyframes color-change {
+    0% {
+        color: #43fabd;  /* Starting color */
+        border-color: #43fabd; /* Starting border color */
+    }
+    50% {
+        color: #a4c1f7; /* Midway color change */
+        border-color: #a4c1f7; /* Midway border color */
+        transform: scale(1.05); /* Scale up slightly */
+    }
+    100% {
+        color: #46c4ff; /* Back to starting color */
+        border-color: #46c4ff; /* Back to starting border color */
+        transform: scale(1); /* Return to original size */
+    }
+}
+
+
+
+
+  
+
+.section-divider {
+    margin: 20px 0; /* Adjust vertical spacing */
+    border: none; /* Remove default border */
+    border-top: 1px solid #ccc; /* Add a 1px solid line */
+}
+
+
+/* Apply Animation to .download-description */
+.sidebar .download-description {
+    margin-top: 40px;
+    margin-left: 47px;
+    font-size: 20px; /* Adjust font size */
+    animation: glow 1.5s infinite; /* Glowing animation */
+    color: #ffffff; /* Text color */
+}
+
+/* Glow Animation Keyframes */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #003366, 0 0 30px #003366, 0 0 40px #003366, 0 0 50px #003366;
+    }
+    50% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #003366, 0 0 60px #003366, 0 0 70px #003366, 0 0 80px #003366;
+    }
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #003366, 0 0 30px #003366, 0 0 40px #003366, 0 0 50px #003366;
+    }
+}
+
+
+
+.download-button a.button {
+    margin-top: 10px;
+    margin-left: 80px;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: white; /* Initial background color */
+    color: #1c6bb6; /* Initial text color */
+    font-size: 20px;
+    text-decoration: none;
+    border: 2px solid #1c6bb6; /* Initial border color */
+    transition: transform 0.3s, font-size 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
+    animation: scaleAnimation 1s infinite alternate;
+}
+
+.download-button a.button:hover {
+    border-radius: 5px;
+    transform: scale(1.1); /* Scale up on hover */
+    background-color: #55ccfc;/* Hover background color */
+    color: white; /* Hover text color */
+    border-color: #55ccfc; /* Hover border color */
+}
+
+
+.cursor img {
+    display: block;
+    width: 70px; /* Ensure the image fills its container */
+    height: 70px; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Smooth transition */
+    animation: scaleAnimation 1s infinite alternate, floatAnimation 2s infinite ease-in-out; /* Combine scale and float animations */
+    margin-left: 340px;
+    margin-top: -37px;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1); /* Initial scale */
+    }
+    100% {
+        transform: scale(1.2); /* Scale up to 1.2 times */
+    }
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up */
+    }
+    100% {
+        transform: translateY(0); /* Return to start position */
+    }
+}
+
+
+
+  
+.sidebar p {
+    margin-bottom: 20px;
+}
+
+.sidebar h2 {
+    color: #7ad6ec;
+    font-size: 1.5em;
+    margin-top: -35px;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    font-size: 0.9em;
+    color: #51a1c0;
+    text-align: justify; 
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px;
+    cursor: pointer;
+    color: #51c4fa;
+}
+
+.sidebar nav ul li.active,
+.sidebar nav ul li:hover {
+    background-color: #55ccfc;
+    color: #e1ebee;
+}
+
+/* Content Styles */
+.content {
+    margin-top: 10px;
+    margin-left: 35%;
+    width: 60%;
+    padding: 20px;
+    position: relative;
+    overflow-y: auto; /* Ensure only the content area scrolls */
+    background-color:  #000f3a;
+    max-height: calc(100vh - 130px); /* Adjust based on header and possibly footer heights */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visual separation */
+}
+
+.section {
+    display: none;
+    max-height: calc(100vh - 40px);
+
+    padding-right: 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+
+/* Item Styles */
+h3 {
+    font-size: 1.75em;
+    margin-bottom: 20px; /* Space below the element */
+    font-size: 2em; /* Optional: Adjust the font size if necessary */
+    border-bottom: 2px solid #85acd1; /* Line at the bottom */
+    padding-bottom: 5px; /* Optional: Add some space inside the border */
+}
+
+
+.education-item,
+.experience-item,
+.skill-item,
+.about-item {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Align items vertically in a column */
+    align-items: center; /* Center items horizontally within the container */
+    text-align: justify; /* Justify text alignment */
+    padding: 15px;
+    border: 2px solid #55ccfc; /* Medium green border */
+    border-radius: 5px;
+    color: #55ccfc; /* Medium green text color */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth hover effect */
+    margin-bottom: 20px; /* Add space below each item */
+    position: relative; /* Relative positioning for pseudo-element */
+    overflow: hidden; /* Hide overflow for animation */
+}
+
+
+.education-item::after,
+.experience-item::after,
+.skill-item::after,
+.about-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* White underline */
+    transition: width 0.75s ease-in-out; /* Smooth width transition */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Hover state */
+.education-item:hover,
+.experience-item:hover,
+.skill-item:hover,
+.about-item:hover {
+    border-color: #1f91fc;  /* Darker green border color on hover */
+    color: #fff; /* White text color on hover */
+    background-color: #1f91fc; /* Darker green background color on hover */
+}
+
+
+.education-item:hover::after,
+.experience-item:hover::after,
+.skill-item:hover::after,
+.about-item:hover::after {
+    width: 100%; /* Increase width on hover */
+    opacity: 1; /* Show underline on hover */
+}
+
+
+
+
+
+.education-item h4,
+.experience-item h4,
+.skill-item h4,
+.about-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.25em;
+}
+
+p {
+    font-size: 1em;
+}
+
+/* Custom Scrollbar Styling for .content */
+.content::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.content::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the track */
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #46a5ff; /* Thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background-color: #59b8e4; /* Darker color on hover */
+}
+
+.section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.section.active {
+    display: block;
+    opacity: 1;
+}

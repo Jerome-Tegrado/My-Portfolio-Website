@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerome Brent A. Tegrado - Welcome</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header style="border-bottom: 2px solid #ffffff; background-color: #1c6bb6;">
+        <div class="branding">
+            <img src="programmer.png" alt="Jerome Tegrado" class="profile-pic">
+            <div class="text-content">
+                <h1>Jerome Tegrado</h1>
+                <p class="tagline">★ Flexible Tech-Enthusiast</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Welcome</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="about.html" class="nav-link about-link active">About</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="about-section">
+        <h1> About Me</h1>
+        <p class="about-text">
+            I am a dedicated and versatile student with a strong background in Information Systems from TUP - Manila, supported by my achievements as a DOST Scholar and consistent academic excellence. With hands-on experience in diverse technologies and a proactive approach to learning, I am committed to contributing effectively and adapting to evolving challenges in the tech industry and pursuing future careers.</p>       
+        <div class="contact-info">
+            <div class="info-item">
+                <img src="call.png" alt="Phone Icon">
+                <span>(+63) 991 791 4424</span>
+            </div>
+            <div class="info-item">
+                <img src="email.png" alt="Email Icon">
+                <span>tegradojerome@gmail.com</span>
+            </div>
+            <div class="info-item">
+                <img src="map.png" alt="Location Icon">
+                <span>Metro Manila</span>
+            </div>
+        </div>
+        
+        <h2>Message Me</h2>
+        <form id="contactForm" action="https://formspree.io/f/manwnlwa" method="POST" class="contact-form">
+            <div class="form-row">
+                <input type="text" name="first_name" placeholder="First Name 📇" required>
+                <input type="text" name="last_name" placeholder="Last Name 📇" required>
+            </div>
+            <div class="form-row">
+                <input type="email" name="_replyto" placeholder="Email 📧" required>
+                <input type="tel" name="phone" placeholder="Phone Number 📞" pattern="[0-9]{10,12}">
+            </div>
+            <textarea name="message" placeholder="Your Message 📝" required></textarea>
+            <div class="form-row">
+                <button type="submit">Submit</button>
+                <button type="reset">Delete</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="about.js"></script>
+</body>
+</html>

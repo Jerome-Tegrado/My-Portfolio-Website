@@ -178,22 +178,15 @@ nav a.active {
     margin-bottom: 100px;
 }
 
-/* Define keyframes for color-changing animation */
-@keyframes color-change {
+@keyframes text-outline-glow {
     0% {
-        color: #e0e4f8; /* Initial color */
-    }
-    25% {
-        color: #41a3ff; /* Change to this color */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.4);
     }
     50% {
-        color: #51fdfd; /* Change to this color */
-    }
-    75% {
-        color: #7bff98; /* Change to this color */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.6);
     }
     100% {
-        color: #197fdf; /* Return to initial color */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.4);
     }
 }
 
@@ -207,7 +200,7 @@ nav a.active {
     border-right: 3px solid transparent; /* Initially transparent cursor */
     padding-right: 8px; /* Spacing after the last letter */
     overflow: hidden; /* Hide overflowing text */
-    animation: color-change 5s ease-in-out infinite; /* Apply the color-changing animation */
+    animation: text-outline-glow 3s ease-in-out infinite; /* Apply the text outline glow animation */
     max-width: 100%; /* Ensure it doesn't overflow parent container */
 }
 

@@ -10,6 +10,15 @@
     src: url(./customfonts/The\ Bride\ in\ Hacienda.ttf);
 }
 
+@font-face {
+    font-family: Carmitta;
+    src: url(./customfonts/Carmitta.ttf);
+}
+
+@font-face {
+    font-family: Shortcake;
+    src: url(./customfonts/Shortcake.ttf);
+}
 
 /* Apply scrollbar styles to the entire body */
 body::-webkit-scrollbar {
@@ -185,12 +194,12 @@ body {
 }
 
 .branding h1 {
-    margin-top: 2px;
-    margin-left: 100px;
-    font-family: Hacienda;
+    margin-top: 10px;
+    margin-left: 110px;
+    font-family: Carmitta;
     font-weight: bold;
     font-size: 2rem;
-    color: #a0cff5; /* Initial color */
+    color: #cfecff; /* Initial color */
     word-spacing: -3px;
     letter-spacing: 5px;
 }
@@ -198,8 +207,8 @@ body {
 
 .branding .tagline {
     margin-top: 5px;
-    margin-left: 100px;
-    font-family: 'Times New Roman', Times, serif;
+    margin-left: 105px;
+    font-family: shortcake;
     font-weight: 300;
     font-size: 16px;
     color: #6ebbfa; 
@@ -215,16 +224,21 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .profile-pic {
     position: absolute; /* Position the image absolutely */
     top: 7%; /* Vertically center the image */
     left: 4%; /* Horizontally center the image */
-    width: 65px; /* Adjust the size as needed */
-    height: 65px; /* Adjust the size as needed */
+    width: 85px; /* Adjust the size as needed */
+    height: 85px; /* Adjust the size as needed */
     transform: translate(-50%, -50%); /* Center the image precisely */
     z-index: 1; /* Send the image behind the text */
     opacity: 1; /* Adjust the opacity if needed */
+    border-radius: 50%; /* Make the image circular */
+    background: whitesmoke;
+    border: 2px;
 }
+
 
 
 nav ul {

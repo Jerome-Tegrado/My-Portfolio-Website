@@ -19,6 +19,16 @@
     src: url(./customfonts/The\ Bride\ in\ Hacienda.ttf);
 }
 
+@font-face {
+    font-family: Carmitta;
+    src: url(./customfonts/Carmitta.ttf);
+}
+
+@font-face {
+    font-family: Shortcake;
+    src: url(./customfonts/Shortcake.ttf);
+}
+
 
 /* Reset and basic styles */
 body, h1, p, ul, li, a {
@@ -49,12 +59,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .branding h1 {
-    margin-top: 2px;
-    margin-left: 100px;
-    font-family: Hacienda;
+    margin-top: 10px;
+    margin-left: 110px;
+    font-family: Carmitta;
     font-weight: bold;
     font-size: 2rem;
-    color: #a0cff5; /* Initial color */
+    color: #cfecff; /* Initial color */
     word-spacing: -3px;
     letter-spacing: 5px;
 }
@@ -62,8 +72,8 @@ body::-webkit-scrollbar-thumb {
 
 .branding .tagline {
     margin-top: 5px;
-    margin-left: 100px;
-    font-family: 'Times New Roman', Times, serif;
+    margin-left: 105px;
+    font-family: shortcake;
     font-weight: 300;
     font-size: 16px;
     color: #6ebbfa; 
@@ -108,13 +118,15 @@ nav a.active {
     position: absolute; /* Position the image absolutely */
     top: 7%; /* Vertically center the image */
     left: 4%; /* Horizontally center the image */
-    width: 65px; /* Adjust the size as needed */
-    height: 65px; /* Adjust the size as needed */
+    width: 85px; /* Adjust the size as needed */
+    height: 85px; /* Adjust the size as needed */
     transform: translate(-50%, -50%); /* Center the image precisely */
     z-index: 1; /* Send the image behind the text */
     opacity: 1; /* Adjust the opacity if needed */
+    border-radius: 50%; /* Make the image circular */
+    background: whitesmoke;
+    border: 2px;
 }
-
 
 
 
@@ -222,43 +234,42 @@ nav a.active {
 .project-item {
     display: none;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Added transitions */
-    transform: translateX(-100%); /* Initially move items off-screen */
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transitions for opacity and transform */
+    animation: fadeSlideOut 0.3s ease forwards; /* Animation for hiding items */
 }
 
 .project-item.active {
     display: block;
     opacity: 1;
-    transform: translateX(0); /* Move active item into view */
+    transform: translateX(0);
+    animation: fadeSlideIn 0.3s ease forwards; /* Animation for showing items */
 }
 
-.project-item-exit-left {
-    display: block;
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+/* Keyframes for fading out and sliding out */
+@keyframes fadeSlideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
 }
 
-.project-item-enter-right {
-    display: block;
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+/* Keyframes for fading in and sliding in */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.project-item-exit-right {
-    display: block;
-    transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.project-item-enter-left {
-    display: block;
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
 
 
 .project-content {
@@ -274,13 +285,13 @@ nav a.active {
 .project-description {
     font-family: JetBrainsMono-Bold;
     flex: 1;
-    color: #41a3ff; /* Green font color */
+    color: #ffffff; /* Green font color */
 }
 
 .description-background {
     padding: 10px; /* Adjust padding as needed */
-    background-color: #ffffff; /* White background color */
-    border: 5px double #41a3ff; /* Double green border */
+    background-color: #41a3ff;  /* White background color */
+    border: 5px double #ffffff; /* Double green border */
     max-width: 400px; /* Adjust the maximum width as per your preference */
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Transition for smooth color changes */
     text-align: justify; /* Justify text alignment */
@@ -288,9 +299,9 @@ nav a.active {
 
 
 .description-background:hover {
-    background-color: #41a3ff; /* Green background color on hover */
-    border-color: #ffffff;/* Green border color on hover */
-    color: #ffffff; /* White font color on hover */
+    background-color: #ffffff; /* Green background color on hover */
+    border-color:  #41a3ff;/* Green border color on hover */
+    color: #41a3ff; /* White font color on hover */
 
 }
 

@@ -1,16 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Array of texts to display sequentially
-    var texts = [
-        { text: "LEADING" },      
-        { text: "EXCELLENCE" },  
+    var texts = [    
+        { text: "EXCELLENT" },  
         { text: "REMARKABLE" }, 
-        { text: "INNOVATIONS" }  
+        { text: "INNOVATOR" }  
     ];
 
     var index = 0;
     var textElement = document.querySelector('.welcome-content h1');
     var animationInterval = 0; // Interval between animations (in milliseconds)
     var moveAnimationDuration = 1500; // Duration of the moving animation (in milliseconds)
+   
+    // Array of light colors in greener and bluer hues
+   var colors = ['#00FFFF', '#7FFFD4', '#66CDAA', '#00CED1'];
+    var colorIndex = 0;
+
+    // Function to get the next color from the array
+    function getNextColor() {
+        var color = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+        return color;
+    }
 
     function animateText() {
         var currentText = texts[index].text;
@@ -23,16 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
             span.textContent = letter;
             span.style.transition = "color 0.2s, transform 0.6s ease-in-out"; // Adjusted transitions for color and movement
             span.style.transitionDelay = (i * 0.05) + "s"; // Delay each letter's color change
+            span.style.color = getNextColor(); // Change color to the next predefined color
             textElement.appendChild(span);
         });
 
         // Trigger reflow to apply initial styles
         void textElement.offsetWidth;
-
-        // Apply color change to each letter sequentially
-        letters.forEach(function(letter, i) {
-            textElement.children[i].style.color = getRandomColor(); // Change color to a random color
-        });
 
         // Move and fade out animation
         setTimeout(function() {
@@ -63,16 +69,38 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(move);
     }
 
-    // Function to get a random color
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-
     // Start animation
     animateText();
+
+    
+    // Function to handle the page transition animation
+    function animatePageTransition(link) {
+        document.body.classList.add('fade-out'); // Add the fade-out class to the body
+
+        // Wait for the fade-out transition to complete
+        setTimeout(() => {
+            // Navigate to the new page
+            window.location.href = link;
+        }, 500); // Match the duration of the CSS transition
+    }
+
+    // Add event listeners to all navigation links
+    document.querySelectorAll('a.nav-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            const targetUrl = this.getAttribute('href');
+            
+            // Trigger the fade-out animation
+            animatePageTransition(targetUrl);
+            
+            // Optional: You can also add a fade-in animation when the new page loads
+            document.body.addEventListener('transitionend', function(event) {
+                if (event.propertyName === 'opacity' && event.target === document.body) {
+                    document.body.classList.remove('fade-out'); // Remove fade-out class on transition end
+                    document.body.classList.add('fade-in'); // Add fade-in class to body for entering animation
+                }
+            }, { once: true }); // Remove event listener after it's triggered once
+        });
+    });
 });
